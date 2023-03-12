@@ -1,5 +1,8 @@
 public class Truck extends Transport {
     private boolean isLoaded;
+
+    public Engine engine = new Engine();
+
     public Truck(int speed, int weight,String color, byte[] coordinate, boolean isLoaded) {
 
         super(speed, weight, color, coordinate);
@@ -12,8 +15,7 @@ public class Truck extends Transport {
 
     @Override
     public void moveObject(int speed) {
-        System.out.println("Object moves at speed: " + speed);
-    }
+        System.out.println("Object moves at speed: " + speed);}
 
     @Override
     public String getValues() {

@@ -1,5 +1,8 @@
 public class Auto extends Transport {
     private int acceleration;
+
+    public Engine engine = new Engine();
+
     public Auto (int speed, int weight, String color, byte[] coordinate){
         super(speed, weight, color, coordinate);
 

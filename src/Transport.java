@@ -15,14 +15,15 @@ public abstract class Transport {
     }
 
     public abstract void moveObject(int speed);
-    public void setValues (int speed, int weight, String color, byte[] coordinate){
+    protected void setValues (int speed, int weight, String color, byte[] coordinate){
         this.speed = speed;
         this.weight = weight;
         this.color = color;
         this.coordinate = coordinate;
     }
 
-    public String getValues (){
+
+    protected String getValues (){
         String info = "Speed: " + speed + ". weight: " + weight + ". color: " + color + ". \n";
         String infoCoordinates = "Coordinates: \n";
 
@@ -32,4 +33,19 @@ public abstract class Transport {
     return info + infoCoordinates;
     }
 
+    class Engine{
+        boolean isReady;
+        int km;
+        public void setValues (boolean isReady, int km){
+            this.isReady = isReady;
+            this.km = km;
+        }
+
+        public void info (){
+            if(isReady)
+                System.out.println("Engine is ready");
+            else
+                System.out.println("Engine is not running, car drove (проїхав) " + km + " km.");
+        }
+    }
 }
