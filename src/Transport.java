@@ -34,13 +34,17 @@ public abstract class Transport {
     }
 
     class Engine{
-        boolean isReady;
-        int km;
+        private boolean isReady;
+        private int km;
+
         public void setValues (boolean isReady, int km){
             this.isReady = isReady;
             this.km = km;
         }
 
+        public void isReady (boolean isReady){
+            this.isReady = isReady;
+        }
         public void info (){
             if(isReady)
                 System.out.println("Engine is ready");

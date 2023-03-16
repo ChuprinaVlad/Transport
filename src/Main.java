@@ -25,11 +25,16 @@ public class Main {
             System.out.println("\n");
 
         System.out.println("Info FlyCar:");
-        new Auto (860,3600, "blue", new byte[] {2,8,0}){
-            void flyCar() {
-                this.engine.info();
+        Auto flyCar = new Auto (460,3600, "blue", new byte[] {2,8,0}){
+            @Override
+            public void moveObject(int speed) {
+                super.moveObject(speed);
+
+                this.engine.isReady(true);
                 System.out.println("This is car FlyCar");
             }
         };
+
+        flyCar.moveObject(850);
     }
 }
